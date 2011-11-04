@@ -17,6 +17,11 @@ public class MyBean {
     @Inject
     InjectionPoint ip;
 
+    @Inject
+    MyBean(InjectionPoint ip) {
+        this.ip = ip;
+    }
+
     public String saySomething() {
 
         String value = "";

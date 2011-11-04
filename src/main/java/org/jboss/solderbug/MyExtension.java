@@ -9,8 +9,8 @@ import javax.enterprise.inject.spi.AnnotatedType;
 import javax.enterprise.inject.spi.BeanManager;
 import javax.enterprise.inject.spi.Extension;
 
-import org.jboss.seam.solder.bean.BeanBuilder;
-import org.jboss.seam.solder.reflection.annotated.AnnotatedTypeBuilder;
+import org.jboss.solder.bean.BeanBuilder;
+import org.jboss.solder.reflection.annotated.AnnotatedTypeBuilder;
 
 /**
  * @author antoine
@@ -27,6 +27,6 @@ public class MyExtension implements Extension {
 
         BeanBuilder beanBuilder = new BeanBuilder(bm).readFromType(myAnnotatedType);
         abd.addBean(beanBuilder.create());
-    }
 
+    }
 }

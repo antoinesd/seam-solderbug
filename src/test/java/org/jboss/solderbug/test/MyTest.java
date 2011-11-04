@@ -33,7 +33,7 @@ public class MyTest {
     @MyQualifier("myValue")
     MyBean myBean;
 
-    @Inject
+    // @Inject
     MyBean unqualifiedBean;
 
     @Deployment
@@ -43,15 +43,15 @@ public class MyTest {
                 .addClasses(MyBean.class, MyQualifier.class, MyExtension.class)
 
                 .addAsLibraries(
-                        DependencyResolvers.use(MavenDependencyResolver.class).loadReposFromPom("pom.xml")
-                                .artifact("org.jboss.seam.solder:seam-solder").resolveAs(GenericArchive.class));
+                        DependencyResolvers.use(MavenDependencyResolver.class).loadMetadataFromPom("pom.xml")
+                                .artifact("org.jboss.solder:solder-impl").resolveAs(GenericArchive.class));
         return ret;
     }
 
     @Test
     public void testHello() {
 
-        Assert.assertTrue("Hello CDI World ".equals(myBean.saySomething()));
+        Assert.assertTrue("Hello CDI World myValue".equals(myBean.saySomething()));
     }
 
     @Test

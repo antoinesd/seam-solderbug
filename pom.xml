@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.jboss.seam</groupId>
         <artifactId>seam-parent</artifactId>
-        <version>11</version>
+        <version>16</version>
     </parent>
 
 
@@ -15,7 +15,7 @@
 
 
     <properties>
-        <seam.version>3.0.0.Final</seam.version>
+        <seam.version>3.1.0.Beta4</seam.version>
     </properties>
 
     <dependencyManagement>
@@ -38,8 +38,9 @@
         </dependency>
 
         <dependency>
-            <groupId>org.jboss.seam.solder</groupId>
-            <artifactId>seam-solder</artifactId>
+            <groupId>org.jboss.solder</groupId>
+            <artifactId>solder-impl</artifactId>
+            <version>${seam.version}</version>
             <scope>compile</scope>
         </dependency>
 
@@ -105,7 +106,11 @@
             <artifactId>shrinkwrap-resolver-impl-maven</artifactId>
             <scope>test</scope>
         </dependency>
-
+ <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
 
 
     </dependencies>
